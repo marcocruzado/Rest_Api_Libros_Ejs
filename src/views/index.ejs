@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/header %>
+    <title>Inicio </title>
+</head>
+
+<body>
+
+    <% include partials/navegacion%>
+
+    <div class="container p-4">
+        <div class="row">
+            <% books.forEach(function(book){ %>
+            <div class="col-md-4">
+                <div class="card">
+
+                    <div class="card-header">
+                        <%= book.title %> / <%= book.autor %>
+                    
+                    </div>
+                    <img src="<%= book.image %>" class="card-omg-top">
+                    <div class="card-body">
+                        <%= book.description %>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/delete/<%= book.id %>" class="btn btn-danger">
+                            Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <%  }) %>
+        </div>
+    </div>
+
+</body>
+
+</html>
